@@ -27,7 +27,7 @@ This project aims to develop a web application that provides personalized recipe
 1. **Clone the repository**
 
    ```bash
-   git clone [[repository_url]](https://github.com/thetajwar2003/khuda-lagche.git)
+   git clone https://github.com/thetajwar2003/khuda-lagche.git
    cd khuda-lagche
    ```
 

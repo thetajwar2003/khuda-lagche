@@ -2,7 +2,6 @@ import BlogCard from "@/components/Cards/BlogCard";
 import TrendingRecipeCard from "@/components/Cards/TrendingRecipeCard";
 import { mockBlogs } from "@/mock/blogs";
 import { mockTrendingFoods } from "@/mock/trending";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {

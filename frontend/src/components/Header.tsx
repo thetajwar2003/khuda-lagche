@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaRegUser, FaSearch } from "react-icons/fa";
 
@@ -18,12 +19,21 @@ export default function Header() {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl">Khuda Lagche</span>
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-white">Recipes</a>
-          <a className="mr-5 hover:text-white">Popular</a>
-          <a className="mr-5 hover:text-white">Seasonal</a>
+          <Link href="/recipe" className="mr-5 hover:text-white">
+            Recipes
+          </Link>
+          <Link href="/recipe?filter=popular" className="mr-5 hover:text-white">
+            Popular
+          </Link>
+          <Link
+            href="/recipe?filter=seasonal"
+            className="mr-5 hover:text-white"
+          >
+            Seasonal
+          </Link>
         </nav>
         <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
           <FaSearch />

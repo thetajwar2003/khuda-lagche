@@ -3,6 +3,7 @@ import TrendingRecipeCard from "@/components/Cards/TrendingRecipeCard";
 import { mockBlogs } from "@/mock/blogs";
 import { mockTrendingFoods } from "@/mock/trending";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,9 +25,12 @@ export default function Home() {
             mouth-watering recipes.
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-accent rounded text-lg">
+            <Link
+              href="/recipe"
+              className="inline-flex text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-accent rounded text-lg"
+            >
               View Recipes
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -35,8 +39,8 @@ export default function Home() {
         <div className="container px-5 py-12 mx-auto">
           <h2 className="text-4xl font-bold text-white m-2">Recent Blogs</h2>
           <div className="flex">
-            {mockBlogs.map((recipe, index) => (
-              <BlogCard {...recipe} key={index} />
+            {mockBlogs.map((recipe) => (
+              <BlogCard {...recipe} key={recipe.id} />
             ))}
           </div>
         </div>
@@ -46,8 +50,10 @@ export default function Home() {
         <div className="container px-5 py-12 mx-auto">
           <h2 className="text-4xl font-bold text-white m-2">Trending</h2>
           <div className="flex">
-            {mockTrendingFoods.map((trending, index) => (
-              <TrendingRecipeCard {...trending} key={index} />
+            {mockTrendingFoods.map((trending) => (
+              <Link href={`/recipe/${trending.id}`} key={trending.id}>
+                <TrendingRecipeCard {...trending} />
+              </Link>
             ))}
           </div>
         </div>

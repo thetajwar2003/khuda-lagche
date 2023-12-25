@@ -1,5 +1,6 @@
 import React from "react";
 import { formatTime } from "../../../utils/formatTime";
+import Link from "next/link";
 
 interface BlogCardProps {
   id: string;
@@ -41,11 +42,13 @@ export default function BlogCard({
       </h2>
       <p className="leading-relaxed mb-4">{description}</p>
       <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-neutral border-opacity-75 mt-auto w-full">
-        <a className="text-secondary inline-flex items-center">
+        <Link
+          href={`/blog/${id}`}
+          className="text-secondary inline-flex items-center"
+        >
           Learn More
           {/* SVG icon here */}
-        </a>
-        {/* Additional icons and info */}
+        </Link>
       </div>
       <a className="inline-flex items-center">
         <img

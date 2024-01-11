@@ -23,7 +23,7 @@ export default function TrendingRecipeCard({
         />
       </div>
       <div className="p-6 flex-grow">
-        <h2 className="inline-block py-1 px-2 rounded mb-1 bg-accent text-secondary text-opacity-75 text-xs font-medium tracking-widest">
+        <h2 className="inline-block py-1 px-2 rounded mb-1 bg-accent text-secondary text-opacity-75 text-sm font-medium tracking-widest">
           {category}
         </h2>
         <h1 className="title-font text-2xl font-medium text-white">{title}</h1>

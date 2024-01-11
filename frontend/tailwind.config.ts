@@ -17,11 +17,11 @@ const config: Config = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      primary: "#006a4e", // Bangladesh Green
-      secondary: "#fed700", // Golden Yellow
-      accent: "#c51162", // Magenta
-      neutral: "#e0e0e0", // Light Gray
-      contrast: "#d32f2f", // Red
+      primary: "#263238", // Dark Blue Grey
+      secondary: "#FFC107", // Amber
+      accent: "#E91E63", // Pink
+      neutral: "#EEEEEE", // Light Grey
+      contrast: "#212121", // Nearly Black
     },
   },
   plugins: [],

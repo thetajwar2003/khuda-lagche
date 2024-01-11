@@ -29,7 +29,7 @@ export default function BlogCard({
       className="p-4 md:w-1/2 flex flex-col items-start border-2 rounded-lg border-neutral m-2"
     >
       <div className="flex justify-between items-center w-full">
-        <span className="inline-block py-1 px-2 rounded bg-accent text-secondary text-opacity-75 text-xs font-medium tracking-widest">
+        <span className="inline-block py-1 px-2 rounded bg-accent text-secondary text-opacity-75 text-sm font-medium tracking-widest">
           {category}
         </span>
         <span className="text-neutral text-sm font-semibold">

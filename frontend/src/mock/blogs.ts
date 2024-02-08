@@ -3,9 +3,9 @@ export const mockBlogs = [
     id: "1",
     title: "Spicy Chicken Curry",
     category: "Dinner",
-    description:
+    brief:
       "A delightful blend of spices and tender chicken, perfect for a cozy dinner.",
-    imageUrl: "https://dummyimage.com/720x400",
+    imageUrl: "https://dummyimage.com/400x400",
     author: "John Doe",
     role: "Chef",
     timestamp: 1703890409833,
@@ -14,9 +14,9 @@ export const mockBlogs = [
     id: "2",
     title: "Classic Margherita Pizza",
     category: "Lunch",
-    description:
+    brief:
       "A classic Italian pizza with fresh tomatoes, mozzarella cheese, and basil.",
-    imageUrl: "https://dummyimage.com/721x401",
+    imageUrl: "https://dummyimage.com/400x400",
     author: "Jane Smith",
     role: "Food Blogger",
     timestamp: 1703423498835,
@@ -25,9 +25,9 @@ export const mockBlogs = [
     id: "3",
     title: "Classic Margherita Pizza",
     category: "Lunch",
-    description:
+    brief:
       "A classic Italian pizza with fresh tomatoes, mozzarella cheese, and basil.",
-    imageUrl: "https://dummyimage.com/721x401",
+    imageUrl: "https://dummyimage.com/400x400",
     author: "Jane Smith",
     role: "Food Blogger",
     timestamp: 1703423498835,

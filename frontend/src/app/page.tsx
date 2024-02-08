@@ -1,4 +1,4 @@
-import BlogCard from "@/components/Cards/BlogCard";
+import MiniBlogCard from "@/components/Cards/MiniBlogCard";
 import TrendingRecipeCard from "@/components/Cards/TrendingRecipeCard";
 import { mockBlogs } from "@/mock/blogs";
 import { mockTrendingFoods } from "@/mock/trending";
@@ -39,7 +39,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-white m-2">Recent Blogs</h2>
           <div className="flex">
             {mockBlogs.map((recipe) => (
-              <BlogCard {...recipe} key={recipe.id} />
+              <MiniBlogCard {...recipe} key={recipe.id} />
             ))}
           </div>
         </div>

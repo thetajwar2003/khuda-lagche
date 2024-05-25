@@ -57,7 +57,7 @@ export default function CreateProfile() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-primary p-5">
+    <div className="min-h-screen w-full flex mt-12 justify-center bg-primary p-5">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-3xl rounded-lg"

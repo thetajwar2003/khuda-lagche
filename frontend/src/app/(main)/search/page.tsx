@@ -1,10 +1,12 @@
 "use client";
+import UploadModal from "@/components/UploadModal";
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaUpload } from "react-icons/fa";
 
 export default function Search() {
   const [search, setSearch] = useState("");
   const [showDescription, setShowDescription] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleSearchButton = () => {
     console.log(search);
@@ -13,6 +15,10 @@ export default function Search() {
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
+  };
+
+  const handleUpload = () => {
+    setOpenModal(!openModal);
   };
 
   return (
@@ -38,9 +44,15 @@ export default function Search() {
             >
               <FaSearch />
             </button>
+            <button
+              className="text-white bg-accent border-0 p-3 focus:outline-none hover:bg-accent rounded text-lg"
+              onClick={handleUpload}
+            >
+              <FaUpload />
+            </button>
           </div>
           {showDescription && (
-            <div className="flex flex-col text-center w-full">
+            <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
                 Advanced Recipe Search
               </h1>
@@ -50,6 +62,7 @@ export default function Search() {
               </p>
             </div>
           )}
+          {openModal && <UploadModal />}
         </div>
       </section>
     </main>

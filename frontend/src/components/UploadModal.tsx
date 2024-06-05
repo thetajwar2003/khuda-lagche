@@ -2,17 +2,24 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaUpload } from "react-icons/fa";
+import SecondaryButton from "./SecondaryButton";
 
 export default function UploadModal() {
   const [file, setFile] = useState<File | null>(null);
 
-  const uploadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFile(e.target.files![0]);
     console.log(file);
   };
+
+  const uploadImage = () => {
+    // TODO: backend call to send image to model to determine the dish and recipe
+    console.log("uploading image");
+  };
+
   return (
-    <div className="flex items-center justify-center w-full ">
-      <label className="flex flex-col items-center justify-center w-2/3 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500">
+    <div className="flex flex-col items-center justify-center w-full ">
+      <label className="flex flex-col items-center justify-center w-2/3 h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 mb-6">
         <div className="flex flex-col items-center justify-center m-6">
           {file ? (
             <>
@@ -47,9 +54,10 @@ export default function UploadModal() {
           type="file"
           className="hidden"
           accept="image/*"
-          onChange={uploadFile}
+          onChange={handleImage}
         />
       </label>
+      <SecondaryButton body={"Upload"} onClick={uploadImage} />
     </div>
   );
 }

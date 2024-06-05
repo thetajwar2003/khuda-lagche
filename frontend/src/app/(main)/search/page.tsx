@@ -1,4 +1,5 @@
 "use client";
+import SecondaryButton from "@/components/SecondaryButton";
 import UploadModal from "@/components/UploadModal";
 import React, { useState } from "react";
 import { FaSearch, FaUpload } from "react-icons/fa";
@@ -31,25 +32,15 @@ export default function Search() {
                 type="text"
                 id="full-name"
                 name="full-name"
-                className="w-full text-neutral bg-primary bg-opacity-40 rounded border border-neutral focus:border-accent focus:ring-2 focus:ring-accent focus:bg-transparent text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full text-neutral bg-gray-50 dark:bg-gray-700 bg-opacity-40 rounded border border-neutral focus:border-accent focus:ring-2 focus:ring-accent focus:bg-transparent text-base outline-none py-1 px-3 leading-8 hover:bg-gray-800 transition-colors duration-200 ease-in-out"
                 placeholder="What are you looking for?"
                 onChange={handleSearchInput}
                 value={search}
               />
             </div>
 
-            <button
-              className="text-white bg-accent border-0 p-3 focus:outline-none hover:bg-accent rounded text-lg"
-              onClick={handleSearchButton}
-            >
-              <FaSearch />
-            </button>
-            <button
-              className="text-white bg-accent border-0 p-3 focus:outline-none hover:bg-accent rounded text-lg"
-              onClick={handleUpload}
-            >
-              <FaUpload />
-            </button>
+            <SecondaryButton body={<FaSearch />} onClick={handleSearchButton} />
+            <SecondaryButton body={<FaUpload />} onClick={handleUpload} />
           </div>
           {showDescription && (
             <div className="flex flex-col text-center w-full mb-12">

@@ -1,20 +1,23 @@
 import React from "react";
 
-interface TrendingRecipeCardProps {
+interface RecipeCardProps {
   id: string;
   imgUrl: string;
   title: string;
   category: string;
 }
 
-export default function TrendingRecipeCard({
+export default function RecipeCard({
   id,
   imgUrl,
   title,
   category,
-}: TrendingRecipeCardProps) {
+}: RecipeCardProps) {
   return (
-    <div className="flex flex-col border-2 border-gray-800 m-2 rounded-lg overflow-hidden">
+    <div
+      className="xs:w-1/2 flex flex-col border-2 border-gray-800 m-2 rounded-lg overflow-hidden "
+      id={id}
+    >
       <div className="flex-shrink-0">
         <img
           className="h-48 w-full object-cover object-center" // Set a fixed height for images

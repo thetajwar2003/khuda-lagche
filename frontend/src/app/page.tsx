@@ -1,5 +1,5 @@
 import BlogCard from "@/components/Cards/BlogCard";
-import TrendingRecipeCard from "@/components/Cards/TrendingRecipeCard";
+import RecipeCard from "@/components/Cards/RecipeCard";
 import { mockBlogs } from "@/mock/blogs";
 import { mockTrendingFoods } from "@/mock/trending";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
+      <div className="py-12 flex md:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
           <img
             className="object-cover object-center rounded"
@@ -34,28 +34,28 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="overflow-hidden">
-        <div className="container px-5 py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white m-2">Recent Blogs</h2>
-          <div className="flex">
-            {mockBlogs.map((recipe) => (
-              <BlogCard {...recipe} key={recipe.id} />
-            ))}
-          </div>
+      <section className="overflow-hidden py-12 ">
+        {/* <div className="mx-auto"> */}
+        <h2 className="text-4xl font-bold text-white m-2">Recent Blogs</h2>
+        <div className="flex">
+          {mockBlogs.map((recipe) => (
+            <BlogCard {...recipe} key={recipe.id} />
+          ))}
         </div>
+        {/* </div> */}
       </section>
 
-      <section className="overflow-hidden">
-        <div className="container px-5 py-12 mx-auto">
-          <h2 className="text-4xl font-bold text-white m-2">Trending</h2>
-          <div className="flex">
-            {mockTrendingFoods.map((trending) => (
-              <Link href={`/recipe/${trending.id}`} key={trending.id}>
-                <TrendingRecipeCard {...trending} />
-              </Link>
-            ))}
-          </div>
+      <section className="overflow-hidden py-12 ">
+        {/* <div className="mx-auto"> */}
+        <h2 className="text-4xl font-bold text-white m-2">Trending</h2>
+        <div className="flex">
+          {mockTrendingFoods.map((trending) => (
+            <Link href={`/recipe/${trending.id}`} key={trending.id}>
+              <RecipeCard {...trending} />
+            </Link>
+          ))}
         </div>
+        {/* </div> */}
       </section>
     </main>
   );

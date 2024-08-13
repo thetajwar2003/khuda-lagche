@@ -22,25 +22,31 @@ export default function Header() {
           <span className="ml-3 text-xl">Khuda Lagche</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <Link href="/recipe" className="mr-5 hover:text-white">
+          <Link href="/recipe" className="mr-5 hover:text-gray-300 text-white">
             Recipes
           </Link>
-          <Link href="/recipe?filter=popular" className="mr-5 hover:text-white">
+          <Link
+            href="/recipe?filter=popular"
+            className="mr-5 hover:text-gray-300 text-white"
+          >
             Popular
           </Link>
           <Link
             href="/recipe?filter=seasonal"
-            className="mr-5 hover:text-white"
+            className="mr-5 hover:text-gray-300 text-white"
           >
             Seasonal
           </Link>
         </nav>
-        <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
+        <Link
+          href="/search"
+          className="inline-flex items-center text-white border-0 p-3 focus:outline-none hover:text-gray-300 rounded text-base mt-4 md:mt-0"
+        >
           <FaSearch />
-        </button>
+        </Link>
         <Link
           href="/signup"
-          className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+          className="inline-flex items-center text-white border-0 p-3 focus:outline-none hover:text-gray-300 rounded text-base mt-4 md:mt-0"
         >
           <FaRegUser />
         </Link>

@@ -1,8 +1,13 @@
 "use client";
-import SecondaryButton from "@/components/SecondaryButton";
-import UploadModal from "@/components/UploadModal";
 import React, { useState } from "react";
 import { FaSearch, FaUpload } from "react-icons/fa";
+
+import SecondaryButton from "@/components/SecondaryButton";
+import UploadModal from "@/components/UploadModal";
+
+import { mockRecipes } from "@/mock/recipes";
+import Link from "next/link";
+import RecipeCard from "@/components/Cards/RecipeCard";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -27,6 +32,7 @@ export default function Search() {
       <section>
         <div className="container px-5 py-24 mx-auto w-screen">
           <div className="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 sm:space-x-4 sm:space-y-0 space-y-4 mb-12 items-center">
+            {/* SECTION: Search Bar */}
             <div className="relative sm:mb-0 flex-grow w-full ">
               <input
                 type="text"
@@ -42,6 +48,8 @@ export default function Search() {
             <SecondaryButton body={<FaSearch />} onClick={handleSearchButton} />
             <SecondaryButton body={<FaUpload />} onClick={handleUpload} />
           </div>
+
+          {/* SECTION: Body */}
           {showDescription && (
             <div className="flex flex-col text-center w-full mb-12">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
@@ -53,6 +61,21 @@ export default function Search() {
               </p>
             </div>
           )}
+
+          {mockRecipes.length > 0 && (
+            <div className="flex flex-wrap justify-center items-center">
+              {mockRecipes.map((recipe: any) => (
+                <Link
+                  href={`/recipe/${recipe["id"]}`}
+                  key={recipe["id"]}
+                  className="w-1/4"
+                >
+                  <RecipeCard {...recipe} />
+                </Link>
+              ))}
+            </div>
+          )}
+
           {openModal && <UploadModal />}
         </div>
       </section>

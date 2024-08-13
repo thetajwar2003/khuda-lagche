@@ -1,5 +1,5 @@
 import BlogCard from "@/components/Cards/BlogCard";
-import TrendingRecipeCard from "@/components/Cards/TrendingRecipeCard";
+import RecipeCard from "@/components/Cards/RecipeCard";
 import { mockBlogs } from "@/mock/blogs";
 import { mockTrendingFoods } from "@/mock/trending";
 import Link from "next/link";
@@ -51,7 +51,7 @@ export default function Home() {
         <div className="flex">
           {mockTrendingFoods.map((trending) => (
             <Link href={`/recipe/${trending.id}`} key={trending.id}>
-              <TrendingRecipeCard {...trending} />
+              <RecipeCard {...trending} />
             </Link>
           ))}
         </div>

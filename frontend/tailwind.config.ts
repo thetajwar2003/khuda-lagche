@@ -20,7 +20,10 @@ const config: Config = {
       current: "currentColor",
       primary: "#263238", // Dark Blue Grey
       secondary: "#FFC107", // Amber
-      accent: "#E91E63", // Pink
+      accent: {
+        DEFAULT: "#E91E63", // Normal Pink (Accent)
+        light: "#F48FB1", // Lighter Pink
+      },
       neutral: "#EEEEEE", // Light Grey
       contrast: "#212121", // Nearly Black
       white: "#FFFFFF",

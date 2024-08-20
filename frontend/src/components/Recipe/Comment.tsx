@@ -14,7 +14,7 @@ export default function Comment() {
     setComment(""); // Clear the comment field after submission
   };
   return (
-    <div className="bg-secondary rounded-lg shadow-lg p-6 mt-6">
+    <div className="rounded-lg shadow-lg p-6 mt-6 border-2 border-secondary">
       <h2 className="text-2xl font-semibold text-white mb-4">
         Leave a Comment
       </h2>

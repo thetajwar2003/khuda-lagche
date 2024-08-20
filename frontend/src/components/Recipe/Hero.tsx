@@ -15,7 +15,7 @@ export default function Hero({
   cookingTime,
 }: HeroProps) {
   return (
-    <div className="rounded-lg shadow-lg p-6">
+    <>
       <div className="relative w-full" style={{ paddingBottom: "66.67%" }}>
         {/* 3:2 aspect ratio */}
         <Image
@@ -33,6 +33,6 @@ export default function Hero({
           <strong>Cooking Time:</strong> {cookingTime}
         </p>
       </div>
-    </div>
+    </>
   );
 }

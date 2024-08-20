@@ -33,13 +33,13 @@ export default function RecipePage() {
           />
 
           {/* Nutrition Information Section */}
-          <div className="bg-secondary rounded-lg shadow-lg p-6 mt-6">
+          <div className="border-2 border-secondary rounded-lg shadow-lg p-6 mt-6">
             <h2 className="text-2xl font-semibold text-white mb-4">
               Nutritional Information
             </h2>
             <button
               onClick={toggleNutritionInfo}
-              className="text-white bg-accent hover:bg-accent-dark py-2 px-4 rounded focus:outline-none"
+              className="text-white bg-accent hover:bg-accent-light py-2 px-4 rounded focus:outline-none"
             >
               {showNutrition ? "Hide" : "Show"} Nutritional Information
             </button>

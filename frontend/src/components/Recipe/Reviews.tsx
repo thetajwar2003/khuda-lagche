@@ -11,7 +11,7 @@ interface ReviewsProps {
 
 export default function Reviews({ reviews }: ReviewsProps) {
   return (
-    <div className="bg-secondary rounded-lg shadow-lg p-6 mt-6">
+    <div className="border-2 border-secondary rounded-lg shadow-lg p-6 mt-6">
       <h2 className="text-2xl font-semibold text-white mb-4">Reviews</h2>
       {reviews.map((review, index) => (
         <div key={index} className="border-t border-gray-500 pt-4">

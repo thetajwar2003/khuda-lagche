@@ -16,7 +16,7 @@ export default function Rating({ existingRating, totalRatings }: RatingProps) {
   };
 
   return (
-    <div className="bg-secondary rounded-lg shadow-lg p-6 mt-6">
+    <div className="border-2 border-secondary rounded-lg shadow-lg p-6 mt-6">
       <h2 className="text-2xl font-semibold text-white mb-4">
         Rate This Recipe
       </h2>

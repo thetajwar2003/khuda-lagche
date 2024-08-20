@@ -6,8 +6,7 @@ import SecondaryButton from "@/components/SecondaryButton";
 import UploadModal from "@/components/UploadModal";
 
 import { mockRecipes } from "@/mock/recipes";
-import Link from "next/link";
-import RecipeCard from "@/components/Cards/RecipeCard";
+import DisplayAllRecipes from "@/components/DisplayAllRecipes";
 
 export default function Search() {
   const [search, setSearch] = useState("");
@@ -61,22 +60,10 @@ export default function Search() {
               </p>
             </div>
           )}
-
-          {mockRecipes.length > 0 && (
-            <div className="flex flex-wrap justify-center items-center">
-              {mockRecipes.map((recipe: any) => (
-                <Link
-                  href={`/recipe/${recipe["id"]}`}
-                  key={recipe["id"]}
-                  className="w-1/4"
-                >
-                  <RecipeCard {...recipe} />
-                </Link>
-              ))}
-            </div>
-          )}
-
           {openModal && <UploadModal />}
+          {mockRecipes.length > 0 && (
+            <DisplayAllRecipes recipes={mockRecipes} />
+          )}
         </div>
       </section>
     </main>

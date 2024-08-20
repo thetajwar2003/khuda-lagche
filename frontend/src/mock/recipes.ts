@@ -1,5 +1,3 @@
-import { RecipeType } from "@/app/types/RecipeType";
-
 export const mockRecipes = [
   {
     id: "1",

@@ -13,7 +13,7 @@ const bio = `I came to this site in March of 2004. It was then called Recipezaar
 
 export default function ProfilePage() {
   return (
-    <div className="bg-primary min-h-screen py-10">
+    <div className="bg-primary min-h-screen py-12 px-5 container">
       <div className="container mx-auto">
         {/* Profile Header */}
         <div className="pb-6 border-b-2 border-secondary mb-6">

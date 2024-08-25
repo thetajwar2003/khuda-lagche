@@ -21,7 +21,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Recipes Section */}
-        <ProfileRecipe recipes={mockRecipes} />
+        <ProfileRecipe recipes={[]} />
       </div>
     </div>
   );

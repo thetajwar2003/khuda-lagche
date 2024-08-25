@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type AccountCreationValues = {
@@ -22,6 +22,7 @@ export default function CreateProfile() {
 
     formState: { errors },
   } = useForm<AccountCreationValues>();
+
   const onSubmit: SubmitHandler<AccountCreationValues> = (data) => {
     // TODO: Handle form submission
     console.log({ ...data, userId: userId });
@@ -29,7 +30,7 @@ export default function CreateProfile() {
   };
 
   return (
-    <div className="min-h-screen w-full flex  justify-center bg-primary p-5 mt-20">
+    <div className="min-h-screen w-full flex justify-center bg-primary p-5 mt-20">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-3xl rounded-lg"
@@ -54,6 +55,7 @@ export default function CreateProfile() {
             <p className="text-accent text-xs">Email is required.</p>
           )}
         </div>
+
         <div className="mb-4">
           <label
             htmlFor="password"
@@ -84,10 +86,21 @@ export default function CreateProfile() {
 
         <button
           type="submit"
-          className="w-full p-3 rounded bg-accent text-neutral font-bold hover:bg-pink-700 transition-colors"
+          className="w-full p-3 rounded bg-accent text-neutral font-bold hover:bg-pink-700 transition-colors mb-4"
         >
           Login
         </button>
+
+        {/* Sign Up Link */}
+        <div className="text-center">
+          <p className="text-neutral mb-2">Don't have an account?</p>
+          <Link
+            href="/signup"
+            className="inline-block text-secondary bg-primary border border-secondary py-2 px-4 rounded hover:bg-secondary hover:text-white transition-colors"
+          >
+            Sign Up
+          </Link>
+        </div>
       </form>
     </div>
   );

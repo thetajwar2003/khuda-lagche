@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaRegUser, FaSearch } from "react-icons/fa";
+import { FaRegUser, FaSearch, FaSignInAlt } from "react-icons/fa";
 import logo from "../../public/khuda-lagche-logo.png";
 
 export default function Header() {
+  const user = true;
   return (
     <header className="text-gray-400 bg-accent body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -44,12 +45,21 @@ export default function Header() {
         >
           <FaSearch />
         </Link>
-        <Link
-          href="/signup"
-          className="inline-flex items-center text-white border-0 p-3 focus:outline-none hover:text-gray-300 rounded text-base mt-4 md:mt-0"
-        >
-          <FaRegUser />
-        </Link>
+        {user ? (
+          <Link
+            href="/profile"
+            className="inline-flex items-center text-white border-0 p-3 focus:outline-none hover:text-gray-300 rounded text-base mt-4 md:mt-0"
+          >
+            <FaRegUser />
+          </Link>
+        ) : (
+          <Link
+            href="/signup"
+            className="inline-flex items-center text-white border-0 p-3 focus:outline-none hover:text-gray-300 rounded text-base mt-4 md:mt-0"
+          >
+            <FaSignInAlt />
+          </Link>
+        )}
       </div>
     </header>
   );

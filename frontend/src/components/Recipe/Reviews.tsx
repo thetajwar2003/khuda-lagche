@@ -15,7 +15,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
       <h2 className="text-2xl font-semibold text-white mb-4">Reviews</h2>
       {reviews.map((review, index) => (
         <div key={index} className="border-t border-gray-500 pt-4">
-          <p className="text-gray-300">"{review.comment}"</p>
+          <p className="text-gray-300">&quot;{review.comment}&quot;</p>
           <div className="text-sm text-gray-400">- {review.reviewerName}</div>
         </div>
       ))}

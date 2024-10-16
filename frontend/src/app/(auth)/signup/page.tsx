@@ -31,8 +31,8 @@ export default function SignUpPage() {
       <div className="w-1/2 border-r border-contrast p-5 flex flex-col ">
         <div className="mt-60">
           <blockquote className="italic text-accent">
-            “I don't want to look back and think{" "}
-            <b>'I could have eaten that.'</b> ”
+            &quot;I don&apos;t want to look back and think{" "}
+            <b>&apos;I could have eaten that.&apos;</b> &quot;
           </blockquote>
           <p className="mt-4 text-secondary">~ Someone Hungry</p>
         </div>

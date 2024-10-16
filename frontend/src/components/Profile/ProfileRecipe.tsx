@@ -27,7 +27,7 @@ export default function ProfileRecipe({ recipes }: ProfileRecipeProps) {
         <div className="border-2 border-secondary p-6 rounded-lg shadow-lg text-center">
           <h3 className="text-xl font-semibold text-white">No Recipes Found</h3>
           <p className="text-neutral mt-2">
-            You haven't posted any recipes yet.
+            You haven&apos;t posted any recipes yet.
           </p>
           <div className="flex justify-center mt-4">
             <Link

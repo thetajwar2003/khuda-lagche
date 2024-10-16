@@ -12,7 +12,7 @@ export default function RecipePage() {
           All Recipes
         </h1>
         <p className="lg:w-2/3 mx-auto leading-relaxed text-base w-full">
-          Here's a list of all of our recipes in our database!
+          Here&apos;s a list of all of our recipes in our database!
         </p>
       </div>
       <DisplayAllRecipes recipes={mockRecipes} />

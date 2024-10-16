@@ -93,7 +93,7 @@ export default function CreateProfile() {
 
         {/* Sign Up Link */}
         <div className="text-center">
-          <p className="text-neutral mb-2">Don't have an account?</p>
+          <p className="text-neutral mb-2">Don&apos;t have an account?</p>
           <Link
             href="/signup"
             className="inline-block text-secondary bg-primary border border-secondary py-2 px-4 rounded hover:bg-secondary hover:text-white transition-colors"

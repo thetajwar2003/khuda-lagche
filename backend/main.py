@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
+from mangum import Mangum
 from typing import Optional, Dict
 from db.dynamodb import get_recipe_by_id, get_recipe_by_name, get_recipes_paginated
 
@@ -54,3 +55,6 @@ async def get_recipes(limit: int = Query(10, ge=1, le=100), last_evaluated_key: 
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+handler = Mangum(app)

@@ -44,19 +44,6 @@ export default function Home() {
         </div>
         {/* </div> */}
       </section>
-
-      <section className="overflow-hidden py-12 ">
-        {/* <div className="mx-auto"> */}
-        <h2 className="text-4xl font-bold text-white m-2">Trending</h2>
-        <div className="flex">
-          {mockTrendingFoods.map((trending) => (
-            <Link href={`/recipe/${trending.id}`} key={trending.id}>
-              <RecipeCard {...trending} />
-            </Link>
-          ))}
-        </div>
-        {/* </div> */}
-      </section>
     </main>
   );
 }

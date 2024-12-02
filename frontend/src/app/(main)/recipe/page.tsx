@@ -13,9 +13,7 @@ export default function RecipePage() {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch(
-          `${config.apiUrl}/recipes/?limit=${recipesPerPage}`
-        );
+        const response = await fetch(`${config.apiUrl}/recipes`);
         const data = await response.json();
 
         setRecipes(data.recipes);

@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, Query, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 from mangum import Mangum
 from typing import Optional, Dict
 import os
@@ -8,6 +9,20 @@ from db.dynamodb import get_recipe_by_id, get_recipe_by_name, get_recipes_pagina
 
 
 app = FastAPI()
+
+# Allow CORS
+origins = [
+    "http://localhost:3000",
+    "https://khuda-lagche.vercel.app/"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # Public route to get a recipe by its ID

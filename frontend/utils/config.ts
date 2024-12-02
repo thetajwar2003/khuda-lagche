@@ -4,7 +4,7 @@ interface Config {
 }
 
 const config: Config = {
-  apiUrl: "https://g21ssdqp18.execute-api.us-east-2.amazonaws.com",
+  apiUrl: "https://khuda-lagche-e12eb852bbf5.herokuapp.com",
 };
 
 export default config;

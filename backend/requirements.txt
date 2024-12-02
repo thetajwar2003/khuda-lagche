@@ -3,3 +3,4 @@ boto3
 uvicorn
 urllib3>=1.26.5,<2
 mangum
+python-dotenv

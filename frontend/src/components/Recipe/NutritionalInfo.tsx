@@ -15,7 +15,7 @@ export default function NutritionalInfo({
 }: NutritionalInfoProps) {
   return (
     <div className="mt-4 text-white">
-      <p>Calories: {nutritionalInfo.calories}</p>
+      <p>Calories: {nutritionalInfo.calories} calories</p>
       <p>Fat: {nutritionalInfo.fat}</p>
       <p>Carbohydrates: {nutritionalInfo.carbohydrates}</p>
       <p>Protein: {nutritionalInfo.protein}</p>

@@ -5,17 +5,37 @@ import { FaSearch, FaUpload } from "react-icons/fa";
 import SecondaryButton from "@/components/SecondaryButton";
 import UploadModal from "@/components/UploadModal";
 
-import { mockRecipes } from "@/mock/recipes";
 import DisplayAllRecipes from "@/components/DisplayAllRecipes";
 
 export default function Search() {
   const [search, setSearch] = useState("");
+  const [recipes, setRecipes] = useState([]); // Store recipes from API
   const [showDescription, setShowDescription] = useState(true);
   const [openModal, setOpenModal] = useState(false);
 
-  const handleSearchButton = () => {
-    console.log(search);
-    setShowDescription(false);
+  const handleSearchButton = async () => {
+    if (!search.trim()) {
+      console.error("Search term is empty");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://khuda-lagche-e12eb852bbf5.herokuapp.com/recipes/search/${encodeURIComponent(
+          search
+        )}`
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch recipes");
+      }
+
+      const data = await response.json();
+      setRecipes(data); // Update recipes state with API data
+      setShowDescription(false);
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+    }
   };
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,9 +81,7 @@ export default function Search() {
             </div>
           )}
           {openModal && <UploadModal />}
-          {mockRecipes.length > 0 && (
-            <DisplayAllRecipes recipes={mockRecipes} />
-          )}
+          {recipes.length > 0 && <DisplayAllRecipes recipes={recipes} />}
         </div>
       </section>
     </main>

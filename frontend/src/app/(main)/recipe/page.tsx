@@ -7,7 +7,7 @@ import config from "../../../../utils/config";
 export default function RecipePage() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(10);
   const recipesPerPage = 12;
 
   useEffect(() => {

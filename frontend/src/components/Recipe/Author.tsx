@@ -12,7 +12,7 @@ interface AuthorProps {
 }
 
 export default function Author({
-  image,
+  image = "https://picsum.photos/200/200",
   name,
   location,
   followers,

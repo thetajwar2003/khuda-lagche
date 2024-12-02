@@ -2,11 +2,14 @@
 import React, { useState } from "react";
 
 interface RatingProps {
-  existingRating: number;
-  totalRatings: number;
+  aggregated_rating: number;
+  review_count: number;
 }
 
-export default function Rating({ existingRating, totalRatings }: RatingProps) {
+export default function Rating({
+  aggregated_rating = 0.0,
+  review_count,
+}: RatingProps) {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0); // Track the current hover rating
 
@@ -40,8 +43,8 @@ export default function Rating({ existingRating, totalRatings }: RatingProps) {
         ))}
       </div>
       <p className="text-white">
-        Existing Rating: <strong>{existingRating.toFixed(1)}</strong> (
-        {totalRatings} reviews)
+        Existing Rating: <strong>{aggregated_rating.toFixed(1)}</strong> (
+        {review_count} reviews)
       </p>
     </div>
   );

@@ -1,8 +1,19 @@
 from fastapi import FastAPI, HTTPException
 import boto3
 from botocore.exceptions import ClientError
+from dotenv import load_dotenv
+import os
 
-dynamodb = boto3.resource('dynamodb', region_name='us-east-2')
+load_dotenv()
+
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+dynamodb = boto3.resource('dynamodb',
+                          region_name='us-east-2',
+                          aws_access_key_id=AWS_ACCESS_KEY_ID,
+                          aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+                          )
 table = dynamodb.Table('recipes')
 
 

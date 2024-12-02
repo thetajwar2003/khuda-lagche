@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import RecipeCard from "./Cards/RecipeCard";
-import { RecipeType } from "@/types/RecipeType";
+import { Recipe } from "@/types/RecipeType";
 
 interface DisplayAllRecipes {
-  recipes: RecipeType[];
+  recipes: any[];
 }
 
 export default function DisplayAllRecipes({ recipes }: DisplayAllRecipes) {

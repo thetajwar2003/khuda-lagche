@@ -2,3 +2,4 @@ __pycache__
 khuda-lagche-key.pem
 lambda_package
 fastapi_lambda.zip
+.env

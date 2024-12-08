@@ -1,12 +1,11 @@
 from fastapi import FastAPI, Depends, HTTPException, Query, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from mangum import Mangum
 from typing import Optional, Dict
 import os
 from zipfile import ZipFile
 import json
 from db.dynamodb import get_recipe_by_id, get_recipe_by_name, get_recipes_paginated
-
+from model.image_recognition import predict_image
 
 app = FastAPI()
 
@@ -88,4 +87,25 @@ async def get_recipes(
         raise HTTPException(status_code=500, detail=str(e))
 
 
-handler = Mangum(app)
+# Route to predict the class of an uploaded image
+@app.post("/predict/")
+async def predict(file: UploadFile = File(...)):
+    """
+    API route to predict the class of an uploaded image.
+    """
+    try:
+        # Save the uploaded file to a temporary location
+        temp_file_path = f"/tmp/{file.filename}"
+        with open(temp_file_path, "wb") as temp_file:
+            temp_file.write(await file.read())
+
+        # Predict the image class
+        prediction = predict_image(temp_file_path)
+
+        # Remove the temporary file
+        os.remove(temp_file_path)
+
+        return {"file_name": file.filename, "prediction": prediction}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
